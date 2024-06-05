@@ -7,7 +7,7 @@ LaplaceYoungK::validParams()
 {
   InputParameters params = Material::validParams();
   params.addParam<MaterialPropertyName>("k", "k", "The name of the property for k");
-  params.addCoupledVar("u", "u", "The variable to take the gradient of");
+  params.addRequiredCoupledVar("u", "The variable to take the gradient of");
   return params;
 }
 
