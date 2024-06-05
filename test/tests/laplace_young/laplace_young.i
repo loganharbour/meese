@@ -24,11 +24,13 @@
 
 [Materials/k]
   type = LaplaceYoungK
-  k = k
   u = u
 []
 
-[BCs]
+[BCs/neumann]
+  type = ADMatNeumannBC
+  variable = u
+  value = 0.2
 []
 
 [Executioner]
