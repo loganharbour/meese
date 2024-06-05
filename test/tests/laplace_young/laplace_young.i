@@ -12,24 +12,23 @@
 
 [Kernels]
   [diff]
-    type = Diffusion
+    type = ADMatDiffusion
+    variable = u
+    diffusivity = k
+  []
+  [react]
+    type = ADReaction
     variable = u
   []
 []
 
+[Materials/k]
+  type = LaplaceYoungK
+  k = k
+  u = u
+[]
+
 [BCs]
-  [left]
-    type = DirichletBC
-    variable = u
-    boundary = left
-    value = 0
-  []
-  [right]
-    type = DirichletBC
-    variable = u
-    boundary = right
-    value = 1
-  []
 []
 
 [Executioner]
