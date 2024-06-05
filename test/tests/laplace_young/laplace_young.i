@@ -28,8 +28,9 @@
 []
 
 [BCs/neumann]
-  type = ADMatNeumannBC
+  type = ADNeumannBC
   variable = u
+  boundary = 'top right bottom left'
   value = 0.2
 []
 
