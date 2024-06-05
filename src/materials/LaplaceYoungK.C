@@ -21,5 +21,5 @@ LaplaceYoungK::LaplaceYoungK(const InputParameters & parameters)
 void
 LaplaceYoungK::computeQpProperties()
 {
-  _k[_qp] = 0;
+  _k[_qp] = 1.0 / std::sqrt(1 + _grad_u[_qp] * _grad_u[_qp]);
 }
